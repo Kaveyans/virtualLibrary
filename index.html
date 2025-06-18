@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Library</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="profile-container">
+            <button class="profile" onclick="toggleDropdown()">
+            <img class="Profile-img" src="user-profile-icon-free-vector.jpg" alt="Search Icon" />
+            <span id="profile-name">Profile</span>
+            </button>
+        </div>
+        
+        <div class="dropdown" id="profile-dropdown">
+            <button id="signin-btn" onclick="handleSignIn()" style="display:block;">Sign In</button>
+            <button id="signout-btn" onclick="handleSignOut()" style="display: none;">Sign Out</button>
+            <button id="addbook-btn" onclick="openAddBookModal()" style="display: none;">Add Book</button>
+        </div>
+    </div>
+    <div class="container-1">
+        <h1>Welcome to the Virtual Library</h1>
+        <input type="text" placeholder="Search for books..." />
+        <p>Explore our collection of books and resources</p>
+
+    </div>
+    
+
+    
+    <div class="modal" id="addBookModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddBookModal()">&times;</span>
+        <h2>Add a Book</h2>
+        <input type="text" id="bookTitle" placeholder="Enter Book Title" />
+        <input type="file" id="bookFile" accept="application/pdf" />
+        <button onclick="uploadBook()">Upload Book</button>
+    </div>
+    </div>
+
+
+    <div class="book-list" id="bookList">
+        <h3>Uploaded Books:</h3>
+        <ul id="bookItems"></ul>
+    </div>
+    
+    <script type="module" src="js.js"></script>
+    
+</body>
+</html>
